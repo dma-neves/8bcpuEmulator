@@ -22,3 +22,4 @@
 #define JMPN_X 21
 #define JMPO_X 22
 #define HLT 23
+#define BREAK 24

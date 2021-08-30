@@ -6,6 +6,15 @@
 
 void printInstruction(unsigned char inst);
 
+void pstate(unsigned char inst, unsigned char data, unsigned char lowb, unsigned char highb)
+{
+    printInstruction(inst);
+    printf("data: %d lowByte: %d highByte: %d\n", data, lowb, highb);
+    printState();
+    printf("\n");
+    getchar();
+}
+
 int main(int argc, char** argv)
 {
     if(argc != 3)
@@ -64,16 +73,11 @@ int main(int argc, char** argv)
                 case JMPZ_X: jmpz(data); break;
                 case JMPN_X: jmpn(data); break;
                 case JMPO_X: jmpo(data); break;
+                case BREAK: pstate(inst, data, lowb, highb); break;
             }
 
             if(step)
-            {
-                printInstruction(inst);
-                printf("data: %d lowByte: %d highByte: %d\n", data, lowb, highb);
-                printState();
-                printf("\n");
-                getchar();
-            }
+                pstate(inst, data, lowb, highb);
         }
         while(inst != HLT);
 
@@ -109,6 +113,7 @@ void printInstruction(unsigned char inst)
 			case JMPN_X: printf("instruction: jmpn X\n"); break;
 			case JMPO_X: printf("instruction: jmpo X\n"); break;
 			case HLT: printf("instruction: hlt\n"); break;
+            case BREAK: printf("instruction: break\n"); break;
             default: printf("inst: %d\n", inst); break;
     }
 }

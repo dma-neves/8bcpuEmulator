@@ -19,7 +19,7 @@ void printState()
     printf("ADR: %d\n", adr);
     printf("ACR: %d\n", acr);
     printf("\nstack:\n");
-    for(int i = 0; i <= regs[SP]; i++)
+    for(int i = 0; i < regs[SP]; i++)
         printf("%d: %d\n", i, mem[i]);
 }
 
@@ -115,7 +115,7 @@ void str_ic_madr()
 
 void jmp_adr()
 {
-    ic = adr;
+    ic = adr+1;
 }
 
 void jmp(unsigned char x)
