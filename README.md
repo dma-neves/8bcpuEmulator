@@ -1,6 +1,6 @@
 # dbcpuEmulator
 **Description**
-  - [dbcpu](https://github.com/dma-neves/dbcpu) emulator written in c. 
+  - [dcpu](https://github.com/dma-neves/dbcpu) emulator written in c. 
   - The emulator only runs [assembled](https://github.com/dma-neves/dcpuAssembler) programs and prints the state of the cpu (registers, stack, etc).
 
 **Usage**
