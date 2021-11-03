@@ -1,6 +1,6 @@
-# 8bcpuEmulator
+# dbcpuEmulator
 **Description**
-  - [8bcpu](https://github.com/dma-neves/8bcpu) emulator written in c. 
+  - [dbcpu](https://github.com/dma-neves/dbcpu) emulator written in c. 
   - The emulator only runs [assembled](https://github.com/dma-neves/8bcpuAssembler) programs and prints the state of the cpu (registers, stack, etc).
 
 **Usage**
